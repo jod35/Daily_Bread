@@ -1,10 +1,10 @@
 from daily_bread import create_app
-from daily_bread.config import DevConfig
-import os
-
-config=os.getenv('FLASK_ENV') or DevConfig
-
-app=create_app(config)
+import webbrowser
 
 if __name__ == "__main__":
-    app.run()
+    url='http://localhost:5000/dailybread'
+    webbrowser.open_new(url)
+    print("Your app has started on : {}".format(url))
+    create_app().run()
+
+    
