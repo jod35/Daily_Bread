@@ -1,0 +1,46 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+a{
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+}
+.logo{
+    padding: 1.2rem;
+    width: 60%;
+}
+.nav-items{
+    
+}
+.nav-area nav{
+    color: dodgerblue;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0 5px 5px 0 lightgray;
+}
+
+.nav-items{
+    padding: 1.5rem;
+}
+
+.nav-link{
+  color: dodgerblue;
+  padding:1.2rem ;
+}
+.main{
+min-height:80vh;
+}
+
+.footer{
+    color: dodgerblue;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0 5px 5px 0 lightgray;
+    padding: 20px;
+   
+}
