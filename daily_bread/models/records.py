@@ -7,6 +7,9 @@ class Verse(db.Model):
     date_read=db.Column(db.DateTime(),default=datetime.utcnow)
     notes=db.relationship('Note',backref='verse',lazy=True)
 
+    def __repr__(self):
+        return f'{self.bible_verse} on {self.date_read}'
+
     def __init__(self,bible_verse,notes):
         self.bible_verse=bible_verse
         self.notes=notes
@@ -19,4 +22,26 @@ class Verse(db.Model):
         db.session.delete(self)
         db.session.commit()
 
-    
+
+
+class Note(db.Model):
+    id=db.Column(db.Integer(),primary_key=True)
+    heading=db.Column(db.String(255))
+    content=db.Column(db.Text())
+    verse_id=db.Column(db.Integer,db.ForeignKey('verse.id'))
+
+    def __init__(self):
+        self.content=content
+        self.heading=heading
+
+    def __repr__(self):
+        return f'{self.heading} on verse {self.verse_id}'
+
+    def save(self):
+        db.session.add(self)
+        db.session.commit()
+
+    def delete(self):
+        db.session.delete(self)
+        db.session.commit()
+
