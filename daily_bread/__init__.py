@@ -3,6 +3,7 @@ from daily_bread.config import DevConfig
 from daily_bread.extensions.database import db
 from flask_migrate import Migrate
 from daily_bread.app.views import app_bp
+from .models.records import Verse
 
 import os
 
@@ -20,6 +21,11 @@ def create_app():
         db.init_app(app)
 
         migrate.init_app(app,db)
+
+
+    @app.shell_context_processor
+    def make_shell_context():
+        return {'Verse':Verse,'app':app,'db':db}
 
     return app
 

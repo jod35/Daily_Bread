@@ -12,7 +12,7 @@ class Config:
     SECRET_KEY=os.environ.get('SECRET_KEY') or 'd70455cba20287d684fe43ab'
 
 class DevConfig(Config):
-    SQLALCHEMY_DATABASE_URI='mysql+pymysql://{}:{}/{}'.format(db_user,db_password,db_name)
+    SQLALCHEMY_DATABASE_URI='sqlite:///site.db'
     SQLALCHEMY_ECHO=True
     DEBUG=True
 
