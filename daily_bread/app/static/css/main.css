@@ -58,7 +58,7 @@ min-height:80vh;
     background-color: lightgreen;
     border: 1px solid green;
     color: green;
-    padding: 1.3rem;
+    padding: 0.8rem;
 }
 .form{
     margin: auto;
@@ -107,6 +107,10 @@ min-height:80vh;
     width: 100%;
     padding: 1.5rem;
     transition: 1.2s all;
+}
+.record-head{
+    color: black;
+    text-decoration: underline;
 }
 .record:hover{
     box-shadow: 0 5px 5px 0 black;

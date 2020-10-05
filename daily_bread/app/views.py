@@ -1,6 +1,6 @@
 from flask import Blueprint,render_template,url_for,request,flash,redirect
 from ..extensions.database import db
-from ..models.records import Verse,Note
+from ..models.records import Verse
 from time import strftime
 
 app_bp=Blueprint('app',__name__,template_folder='templates',static_folder='static')
@@ -11,9 +11,8 @@ def index():
 
     if request.method =="POST":
         bible_verse=request.form.get('bible_verse')
-
         notes=request.form.get('notes')
-        new_verse=Verse(bible_verse=bible_verse)
+        new_verse=Verse(bible_verse=bible_verse,notes=notes)
         new_verse.save()
         flash("New Verse added successfully.")
         return redirect(url_for('app.index'))
@@ -32,7 +31,10 @@ def edit_verse(id):
 
     if request.method == "POST":
         bible_verse=request.form.get('bible_verse')
+        notes=request.form.get('notes')
+        
         verse_to_edit.bible_verse=bible_verse
+        verse_to_edit.notes=notes
 
         db.session.commit()
 
@@ -43,3 +45,22 @@ def edit_verse(id):
         'verse_to_edit':verse_to_edit
     }
     return render_template('edit.html',**context)
+
+
+@app_bp.route('/details/<int:id>',methods=['GET', 'POST'])
+def verse_details(id):
+    verse=Verse.query.get_or_404(id)
+
+    context={
+        'verse':verse
+    }
+    return render_template('versedetails.html',**context)
+
+@app_bp.route('/delete/<int:id>')
+def delete_verse(id):
+    verse_to_delete=Verse.query.get_or_404(id)
+
+    verse_to_delete.delete()
+    flash("Record deleted successfully")
+
+    return redirect(url_for('app.index'))

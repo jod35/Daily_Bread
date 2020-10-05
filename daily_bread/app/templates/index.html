@@ -22,6 +22,10 @@
                         <label for="bible_verse">Your Verse</label>
                         <input type="text" name="bible_verse" id="bible_verse" required>
                     </div>
+                    <div class="form-group">
+                        <label for="notes">Notes</label>
+                        <textarea name="notes" id="notes" cols="30" rows="10"></textarea>
+                    </div>
                   
                     <div class="form-group">
                         <input type="submit" value="Add" class="mybtn">
@@ -35,11 +39,11 @@
                 <h1>Saved Verses</h1>
                 {% for record in records %}
                     <div class="record" >
-                        <h3>&#9876; {{record.bible_verse}}  </h3>
-                       
+                        <h3>&#9876; <a href="{{ url_for('app.verse_details',id=record.id) }}" class="record-head"> {{record.bible_verse}}</a></h3>
+                        <p>{{record.notes}}</p>
                         <br>
                         <a href="{{ url_for('app.edit_verse',id=record.id) }}" class="record-link edit">Edit Verse</a>
-                        <a href="" class="record-link delete">Delete Verse</a>
+                        <a href="{{ url_for('app.delete_verse',id=record.id) }}" class="record-link delete">Delete Verse</a>
                         
                     </div>
                     <br>
