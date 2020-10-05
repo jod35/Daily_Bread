@@ -15,12 +15,12 @@
 <body>
     <section class="nav-area">
         <nav>
-            <div class="logo">
-                <h2>Daily Bread</h2>
-            </div>
+            <a href="{{ url_for('app.index') }}" class="logo">
+                <h2 class="">Daily Bread</h2>
+            </a>
             <div class="nav-items">
-                <a href="#" class="nav-link" id="add-btn">Add A Record &plus;</a>
-                <a href="#" class="nav-link" id="view-btn">View Records</a>
+                <a href="#add" class="nav-link" id="add-btn">Add A Record &plus;</a>
+                <a href="#view" class="nav-link" id="view-btn">View Records</a>
             </div>
         </nav>
     </section>

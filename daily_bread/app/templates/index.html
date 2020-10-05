@@ -2,9 +2,7 @@
 {% block content %}
     
     <section >
-        <div class="add-section">
-          
-                
+        <div class="add-section">      
             <div class="form">
                 {% with messages = get_flashed_messages()  %}
                     {% if messages %}
@@ -32,15 +30,19 @@
             </div>
         </div>
         <div class="view-section">
+            
             <div class="records">
-                
+                <h1>Saved Verses</h1>
                 {% for record in records %}
-                    <div class="record" style="box-shadow:0 8px 8px 0 lightgray">
-                        <h3>&#9876; {{record.bible_verse}}</h3>
+                    <div class="record" >
+                        <h3>&#9876; {{record.bible_verse}}  </h3>
+                       
                         <br>
-                        <a href="" class="record-link">Add Notes</a>
-                        <a href="" class="record-link">Edit</a>
+                        <a href="{{ url_for('app.edit_verse',id=record.id) }}" class="record-link edit">Edit Verse</a>
+                        <a href="" class="record-link delete">Delete Verse</a>
+                        
                     </div>
+                    <br>
                 {% endfor %}
                     
             </div>

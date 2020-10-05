@@ -13,19 +13,23 @@ ul{
 .logo{
     padding: 1.2rem;
     width: 60%;
+    color: white;
 }
 
-.nav-items{
-    
-}
+
 .nav-area nav{
     color:white;
-    background-color: dodgerblue;
+    
     display: flex;
     justify-content: space-between;
     
 }
-
+.nav-area{
+    position:fixed;
+    width: 100%;
+    left: 0;
+    background-color: dodgerblue;
+}
 .nav-items{
     padding: 1.5rem;
 }
@@ -37,6 +41,7 @@ ul{
   border-radius: 7px;
 }
 .main{
+    padding-top: 5%;
 min-height:80vh;
 }
 .container{
@@ -58,11 +63,14 @@ min-height:80vh;
 .form{
     margin: auto;
     width: 60%;
+    box-shadow: 0 5px 5px 0 lightgray;
+    padding: 1.2rem;
 }
 .form input{
     width: 100%;
     padding: 10px;
     border: none;
+    
 
 }
 .form textarea{
@@ -71,6 +79,10 @@ min-height:80vh;
 }
 .form-group{
     padding: 15px;
+}
+.form p{
+    color: lightgray;
+    font-size: 0.99rem;
 }
 .form input[type="text"]{
     border-bottom:1px solid dodgerblue;
@@ -94,18 +106,20 @@ min-height:80vh;
     box-shadow: 0 2px 2px 0 lightgray;
     width: 100%;
     padding: 1.5rem;
+    transition: 1.2s all;
 }
+.record:hover{
+    box-shadow: 0 5px 5px 0 black;
+}
+
 .record-link{
-    color: dodgerblue;
+    
     padding:0.5rem ;
-    border: 1px solid dodgerblue;
+    
     border-radius: 7px;
     transition: all 0.6s;
 }
-.record-link:hover{
-    background-color: dodgerblue;
-    color: white;
-}
+
 
 .footer{
     color: dodgerblue;
@@ -114,6 +128,23 @@ min-height:80vh;
     box-shadow: 0 5px 5px 0 lightgray;
     padding: 20px;
    
+}
+
+.edit{
+    border: 1px solid dodgerblue;
+    color: dodgerblue;
+}
+.edit:hover{
+    background-color: dodgerblue;
+    color: white;
+}
+.delete{
+    border: 1px solid red;
+    color: red;
+}
+.delete:hover{
+    background-color: red;
+    color: white;
 }
 
 
