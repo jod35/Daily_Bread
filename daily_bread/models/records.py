@@ -10,9 +10,8 @@ class Verse(db.Model):
     def __repr__(self):
         return f'{self.bible_verse} on {self.date_read}'
 
-    def __init__(self,bible_verse,notes):
+    def __init__(self,bible_verse):
         self.bible_verse=bible_verse
-        self.notes=notes
     
     def save(self):
         db.session.add(self)

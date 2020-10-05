@@ -19,14 +19,18 @@
                 <h2>Daily Bread</h2>
             </div>
             <div class="nav-items">
-                <a href="" class="nav-link">Add A Record</a>
-                <a href="" class="nav-link">View Records</a>
+                <a href="#" class="nav-link" id="add-btn">Add A Record &plus;</a>
+                <a href="#" class="nav-link" id="view-btn">View Records</a>
             </div>
         </nav>
     </section>
     <section class="main">
         <main>
             
+            {% block content %}
+                
+            {% endblock content %}
+                
         </main>
     </section>
     <section class="footer">
@@ -34,6 +38,6 @@
             
         </footer>
     </section>
-    <script src="js/index.js"></script>
+    <script src="{{url_for('app.static',filename='js/index.js')}}"></script>
 </body>
 </html>

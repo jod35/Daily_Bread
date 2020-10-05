@@ -14,14 +14,16 @@ ul{
     padding: 1.2rem;
     width: 60%;
 }
+
 .nav-items{
     
 }
 .nav-area nav{
-    color: dodgerblue;
+    color:white;
+    background-color: dodgerblue;
     display: flex;
     justify-content: space-between;
-    box-shadow: 0 5px 5px 0 lightgray;
+    
 }
 
 .nav-items{
@@ -29,11 +31,80 @@ ul{
 }
 
 .nav-link{
-  color: dodgerblue;
-  padding:1.2rem ;
+  color: white;
+  padding:0.5rem ;
+  border: 1px solid white;
+  border-radius: 7px;
 }
 .main{
 min-height:80vh;
+}
+.container{
+    display: flex;
+    justify-content: space-between;
+}
+.add-section{
+    padding: 1.5rem;
+    height: 80vh;
+    transition: all 1.6s;
+    /* display: block; */
+}
+.message{
+    background-color: lightgreen;
+    border: 1px solid green;
+    color: green;
+    padding: 1.3rem;
+}
+.form{
+    margin: auto;
+    width: 60%;
+}
+.form input{
+    width: 100%;
+    padding: 10px;
+    border: none;
+
+}
+.form textarea{
+    width: 100%;
+    border: dodgerblue 1px solid;
+}
+.form-group{
+    padding: 15px;
+}
+.form input[type="text"]{
+    border-bottom:1px solid dodgerblue;
+}
+.mybtn{
+    background-color: dodgerblue;
+    color: white;
+    border-radius: 10px;
+}
+.view-section{
+    position: relative;
+    min-height: 80vh;
+    display: none;
+    padding: 1.5rem;
+}
+.records{
+    width: 60%;
+    margin: auto;
+}
+.record{
+    box-shadow: 0 2px 2px 0 lightgray;
+    width: 100%;
+    padding: 1.5rem;
+}
+.record-link{
+    color: dodgerblue;
+    padding:0.5rem ;
+    border: 1px solid dodgerblue;
+    border-radius: 7px;
+    transition: all 0.6s;
+}
+.record-link:hover{
+    background-color: dodgerblue;
+    color: white;
 }
 
 .footer{
@@ -43,4 +114,11 @@ min-height:80vh;
     box-shadow: 0 5px 5px 0 lightgray;
     padding: 20px;
    
+}
+
+
+@media(max-width:800px){
+    .nav-link{
+        padding: 0.2rem;
+    }
 }
