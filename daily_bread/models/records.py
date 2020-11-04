@@ -1,5 +1,7 @@
 from ..extensions.database import db
 from datetime import datetime
+from marshmallow_sqlalchemy import ModelSchema
+from marshmallow import fields
 
 class Verse(db.Model):
     id=db.Column(db.Integer(),primary_key=True)
@@ -22,6 +24,13 @@ class Verse(db.Model):
         db.session.delete(self)
         db.session.commit()
 
+class VerseSchema(ModelSchema):
+    class Meta(ModelSchema.Meta):
+        model=Verse
+        sqla_session=db.session
 
+    id=fields.Integer()
+    bible_verse=fields.String()
+    date_read=fields.DateTime()
 
 

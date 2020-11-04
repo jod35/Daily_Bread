@@ -13,7 +13,7 @@ class Config:
 
 class DevConfig(Config):
     SQLALCHEMY_DATABASE_URI='sqlite:///site.db'
-    SQLALCHEMY_ECHO=True
+    SQLALCHEMY_ECHO=False
     DEBUG=True
 
 class TestConfig(Config):
