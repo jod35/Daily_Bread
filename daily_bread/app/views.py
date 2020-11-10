@@ -21,7 +21,7 @@ def index():
 
 @app_bp.route('/add_verse',methods=['POST'])
 def create_verse():
-    print(f"\n\n{request.get_json()}\n\n")
+    print(f"/n{request.json}/n")
     bible_verse = request.json.get('bible_verse')
     notes = request.json.get('notes')
 
@@ -40,6 +40,21 @@ def create_verse():
         jsonify({"message":"Verse Added Sucessfully",
                     "records":records
         }),201
+    )
+
+@app_bp.route('/get_verses',methods=['GET'])
+def get_verses():
+    verses=Verse.query.order_by(Verse.bible_verse).all()
+
+    verse_schema=VerseSchema(many=True)
+
+    records=verse_schema.dump(verses)
+
+    return make_response(
+        jsonify(
+            {"success":True,
+             "verses":records}
+        )
     )
 
 

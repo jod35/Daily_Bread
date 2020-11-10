@@ -31,8 +31,13 @@ let bible_verse_content = document.querySelector("#bible_verse").value;
 let notes_content = document.querySelector("#notes").value;
 let message_display=document.querySelector(".message");
 
+let xHttp;
 
-const xHttp = new XMLHttpRequest();
+const createRequest=function () {
+    if (window.XMLHttpRequest){
+        xHttp = new XMLHttpRequest();
+    }
+}
 
 
 function Verse(bible_verse, notes) {
@@ -44,32 +49,40 @@ const createVerse = function (bible_verse, notes) {
     return new Verse(bible_verse, notes);
 }
 
+const displayMessage=function(){
+    message_display.style.display="block";
+    message_display.innerHTML=`<p class="green-text">Verse Created Sucessfully</p>`;
+}
+
 const handleStateChange = function () {
     if (xHttp.readyState == 4) {
         if (xHttp.status == 201) {
-            console.log("Request sent to server");
-            alert(JSON.parse(xHttp.responseText));
+            console.log("Request has been made");
+
         }
-    }
-    else {
-        console.log("Something Happened: " + xHttp.status);
     }
 }
 
+//starting XHttpRequest on POST 
 const startRequest = function () {
+
+    createRequest();
+    
+    xHttp.open("POST", "/dailybread/add_verse",true);
     xHttp.onreadystatechange = handleStateChange();
-    xHttp.open("POST", "/dailybread/add_verse");
     xHttp.setRequestHeader("Content-Type", "application/json");
 
     let new_verse = createVerse(bible_verse_content, notes_content);
-    console.log(JSON.stringify(new_verse));
 
     xHttp.send(JSON.stringify(new_verse));
-
-    message_display.style.display="block";
-    message_display.innerHTML=`<p class="green-text">Verse Created Sucessfully</p>`;
+    setTimeout(displayMessage,2000);
+    
 }
 
 verse_submit_button.onclick = function () {
     startRequest();
 }
+
+
+//getting data and displaying it
+
