@@ -4,20 +4,12 @@
     <section >
         <div class="add-section">      
             <div class="form">
-                {% with messages = get_flashed_messages()  %}
-                    {% if messages %}
-                            {% for message in messages %}
-                                <div class="message">
-                                    <center>
-                                        {{message}}
-                                    </center>
-                                </div>
-                                <br>
-                            {% endfor %}
-                    {% endif %}
-                {% endwith %}
+                <div class="message">
+
+                </div>
+                <br>
                 <h1>Add A Verse</h1>
-                <form action="{{ url_for('app.index') }}" method="post">
+                
                     <div class="form-group">
                         <label for="bible_verse">Your Verse</label>
                         <input type="text" name="bible_verse" id="bible_verse" required>
@@ -28,9 +20,9 @@
                     </div>
                   
                     <div class="form-group">
-                        <input type="submit" value="Add" class="mybtn">
+                        <input type="submit" value="Add" class="mybtn" id="send_data">
                     </div>
-                </form>
+        
             </div>
         </div>
         <div class="view-section">
