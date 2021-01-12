@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Daily Bread</title>
+	<link rel="stylesheet" type="text/css" href="static/css/main.css">
+	{{fontawesome_html()}}
+</head>
+<body>
+	<header>
+		<div class="logo"><h1>Daily Bread</h1></div>
+		<div>
+			<button class="clear">Clear</button>
+		</div>
+		<div class="count-cont">
+			<p>Verses <span class=" count">{{count}}</span></p>
+		</div>
+	</header>
+	<section class="main">
+		<div class="left">
+			<div class="form">
+				<form class="add">
+					<fieldset>
+						<h3>Add Your Record</h3>
+					</fieldset>
+					<fieldset>
+						<label for="verse">Verse</label>
+						<input type="text" name="verse">
+					</fieldset>
+					<fieldset>
+						<label for="notes">
+							Notes
+						</label>
+						<textarea rows="5" cols="30" name="notes"></textarea>
+					</fieldset>
+					<fieldset>
+						<button type="submit" class="btn mybtn">Save</button>
+					</fieldset>
+				</form>
+			</div>
+		</div>
+		<div class="right">
+			<div class="verses">
+				{% for verse in verses %}
+					<div class="verse">
+						<span class="verse-id">{{verse.id}}</span>
+						<h3 class="verse-name">{{verse.verse}}</h3>
+						<p class="verse-notes">{{verse.notes}}</p>
+						<div class="options">
+							<a href="#" class="del-btn"><i class="fa fa-trash"  aria-hidden="true"></i></a>
+							<a href="#" class="update-btn"><i class="fas fa-feather "></i></a>
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+	</section>
+	<section class="update-modal" id="update">
+		<div class="update-form">
+			<form class="update">
+				<fieldset>
+					<h3>Update Your Record</h3>
+				</fieldset>
+				<fieldset>
+					<label for="verse">Verse</label>
+					<input type="text" name="verse" id="update-name">
+				</fieldset>
+				<fieldset>
+					<label for="notes">
+						Notes
+					</label>
+					<textarea rows="5" cols="30" name="notes" id="update-notes"></textarea>
+				</fieldset>
+				<fieldset>
+					<button type="submit" class="btn mybtn">Save</button>
+					<button type="button" class=" cancel" onclick="closeModal('update')">Cancel</button>
+				</fieldset>
+			</form>
+		</div>
+	</section>
+	<script src="static/js/index.js"></script>
+</body>
+</html>
