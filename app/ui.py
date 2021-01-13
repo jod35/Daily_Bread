@@ -9,4 +9,4 @@ def index():
     verses = Record.query.order_by(Record.id.desc()).all()
 
     count= len(verses)
-    return render_template('index.html', verses=verses)
+    return render_template('index.html', verses=verses,count=count)

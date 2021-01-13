@@ -23,15 +23,14 @@ header{
 }
 
 .left{
-	width: 40%;
-	background-color: lightslategray;
+	width: 30%;
+	background-color: rgb(8, 13, 17);
 	min-height: 100vh;
 }
 .form{
 	position: fixed;
 	margin-top: 20px;
 	color: white;
-	padding: 20px;
 	
 }
 .form label{
@@ -42,7 +41,7 @@ fieldset{
 	padding: 15px;
 }
 fieldset textarea, input{
-	width: 100%;
+	width: 90%;
 	padding: 10px;
 	border-radius: 7px;
 	border: none;
@@ -75,7 +74,9 @@ fieldset textarea, input{
 	background: blue;
 }
 .count-cont{
-	margin: 20px, 0,0,0;
+	padding-top: 10px;
+	font-size: 1.2em;
+	font-weight: bold;
 }
 
 .right{
