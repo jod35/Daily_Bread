@@ -1,0 +1,152 @@
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: Arial,Helvetica,san-serif;
+}
+
+header{
+	padding: 18px;
+	width: 100%;
+	position: fixed;
+	top: 0;
+	display: flex;
+	justify-content: space-between;
+	color: #fff;
+	background-color: dodgerblue;
+	z-index: 1;
+}
+.main{
+	position: relative;
+	top: 70px;
+	display: flex;
+}
+
+.left{
+	width: 30%;
+	background-color: rgb(8, 13, 17);
+	min-height: 100vh;
+}
+.form{
+	position: fixed;
+	margin-top: 20px;
+	color: white;
+	
+}
+.form label{
+	padding-bottom: 10px;
+}
+fieldset{
+	border: none;
+	padding: 15px;
+}
+fieldset textarea, input{
+	width: 90%;
+	padding: 10px;
+	border-radius: 7px;
+	border: none;
+}
+
+.btn{
+	padding: 20px;
+	border: none;
+	text-transform: uppercase;
+	border-radius: 10px;
+	background-color: dodgerblue;
+	color: white;
+	cursor: pointer;
+	transition: all 1.2s;
+}
+
+.clear{
+	padding: 10px;
+	border: none;
+	text-transform: uppercase;
+	border-radius: 10px;
+	background-color:;
+	color: blue;
+	font-weight: bold;
+	transition: all 1.2s;
+	cursor: pointer;
+}
+.clear:hover,.btn:hover{
+	color: white;
+	background: blue;
+}
+.count-cont{
+	padding-top: 10px;
+	font-size: 1.2em;
+	font-weight: bold;
+}
+
+.right{
+	background-color: lightgray;
+	width: 70%;
+	
+}
+.verses{
+	padding: 5% 0,0,0;
+	margin-top: 5%;
+}
+.verses > .verse + .verse{
+	margin-top: 20px;
+}
+.verse{
+	width: 80%;
+	background-color: white;
+	padding: 20px;
+	margin: auto;
+	transition: all 1.2s;
+}
+.verse:hover{
+	background-color: rgb(240, 232, 232) ;
+}
+.options{
+	padding: 10px;
+}
+.options a{
+	font-size: 25px;
+}
+.options > a + a{
+	margin: 20px;
+}
+.del-btn{
+	color: red;
+}
+.update-btn{
+	color: rgb(39, 161, 39);
+}
+.update-modal{
+	background-color: rgba(0, 0, 0, 0.541);
+	color: white;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 100vh;
+	z-index: 200;
+	display: none;
+}
+.update-form{
+	width: 45%;
+	margin: 100px auto;
+	padding: 20px;
+	color: black;
+	background-color: white;
+}
+.update-form input {
+	border: 1px solid black;
+}
+
+.update-form textarea{
+	border: 1px solid black;
+}
+.cancel{
+	padding: 20px;
+	border: none;
+	text-transform: uppercase;
+	border-radius: 10px;
+	background-color: red;
+	color: white;
+	cursor: pointer;
+	transition: all 1.2s;
+}
