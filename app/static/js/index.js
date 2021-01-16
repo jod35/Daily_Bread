@@ -9,6 +9,9 @@ const deleteButtons = document.querySelectorAll(".del-btn");
 const updateButtons = document.querySelectorAll(".update-btn");
 const updateModal = document.querySelector(".update-modal");
 const updateForm = document.querySelector(".update");
+const paintButtons=document.querySelectorAll('.paint-btn');
+const colorModal=document.querySelector('.color-modal');
+const colorForm=document.querySelector('.color');
 
 const closeModal = (id) => {
   let el = document.getElementById(id);
@@ -99,6 +102,8 @@ for (let i = 0; i < verseContents.length; i++) {
   });
 }
 
+//update verse record 
+//get it and then update it with fetch
 for (let i = 0; i < verseContents.length; i++) {
   updateButtons[i].addEventListener("click", () => {
     updateModal.style.display = "block";
@@ -138,3 +143,36 @@ for (let i = 0; i < verseContents.length; i++) {
     });
   });
 }
+
+
+
+
+//change backgroundColor of a verse record
+const changeVerseBackground =(el)=>{
+  colorModal.style.display="block";
+
+  colorForm.addEventListener('submit',(e)=>{
+    let newColorData= new FormData(colorForm);
+
+    console.log(newColorData.get('color'));
+
+    el.style.backgroundColor=newColorData.get('color');
+
+    el.style.color="#fff";
+
+    colorForm.reset();
+
+
+    e.preventDefault();
+  })
+  
+}
+
+
+for(let i=0; i< verseContents.length; i++){
+  paintButtons[i].addEventListener('click',()=>{
+     changeVerseBackground(verseContents[i]);
+  })
+}
+
+
