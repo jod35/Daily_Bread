@@ -48,6 +48,7 @@
 						<div class="options">
 							<a href="#" class="del-btn"><i class="fa fa-trash"  aria-hidden="true"></i></a>
 							<a href="#" class="update-btn"><i class="fas fa-feather "></i></a>
+							<a href="#" class="paint-btn"><i class="fa fa-paint-brush" aria-hidden="true"></i></a>
 						</div>
 					</div>
 				{% endfor %}
@@ -73,6 +74,24 @@
 				<fieldset>
 					<button type="submit" class="btn mybtn">Save</button>
 					<button type="button" class=" cancel" onclick="closeModal('update')">Cancel</button>
+				</fieldset>
+			</form>
+		</div>
+	</section>
+	<section class="color-modal" id="color">
+		<div class="color-form">
+			<form class="color">
+				<fieldset>
+					<h3>Set a Background</h3>
+				</fieldset>
+				<fieldset>
+					<label for="color">Color</label>
+					<input type="color" name="color" id="verse-color">
+				</fieldset>
+
+				<fieldset>
+					<button type="submit" class="btn mybtn">Save</button>
+					<button type="button" class=" cancel" onclick="closeModal('color')">Cancel</button>
 				</fieldset>
 			</form>
 		</div>
