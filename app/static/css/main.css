@@ -25,6 +25,9 @@ header{
 	font-size: 2em;
 	text-decoration: none;
 }
+.nav-bar-close{
+	display: none;
+}
 .main{
 	position: relative;
 	top: 70px;

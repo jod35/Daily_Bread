@@ -8,7 +8,8 @@
 <body>
 	<header>
 		<div class="nav-bar">
-			<a href="#">&#9776;</a>
+			<a href="#" class="nav-bar-open" id="open-nav">&#9776;</a>
+			<a href="#" class="nav-bar-close" onclick="closeModal('left')">&times;</a>
 		</div>
 		<div class="logo"><h1>Daily Bread</h1></div>
 		<div>
@@ -19,7 +20,7 @@
 		</div>
 	</header>
 	<section class="main">
-		<div class="left">
+		<div class="left" id="left">
 			<div class="form">
 				<form class="add">
 					<fieldset>

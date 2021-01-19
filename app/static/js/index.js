@@ -12,22 +12,35 @@ const updateForm = document.querySelector(".update");
 const paintButtons=document.querySelectorAll('.paint-btn');
 const colorModal=document.querySelector('.color-modal');
 const colorForm=document.querySelector('.color');
-const mobileNav=document.querySelector('.nav-bar');
+const mobileNav=document.querySelector('.nav-bar-open');
+const mobileNavClose=document.querySelector('.nav-bar-close');
 const leftSection=document.querySelector('.left');
 
 
 
 mobileNav.addEventListener('click',()=>{
     if (leftSection.style.display = 'none'){
-        leftSection.style.display='block'
+        leftSection.style.display='block';
+        mobileNav.style.display="none";
+        mobileNavClose.style.display="block";
     }
   })
+
 
 const closeModal = (id) => {
   let el = document.getElementById(id);
 
   el.style.display = "none";
 };
+
+
+
+mobileNavClose.addEventListener('click',()=>{
+   closeModal('left');
+   mobileNavClose.style.display="none";
+   mobileNav.style.display="block";    
+})
+
 
 clearButton.addEventListener("click", () => {
   clearAllVerses();
@@ -184,5 +197,4 @@ for(let i=0; i< verseContents.length; i++){
      changeVerseBackground(verseContents[i]);
   })
 }
-
 
