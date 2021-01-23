@@ -12,6 +12,17 @@ const updateForm = document.querySelector(".update");
 const paintButtons=document.querySelectorAll('.paint-btn');
 const colorModal=document.querySelector('.color-modal');
 const colorForm=document.querySelector('.color');
+const mobileNav=document.querySelector('.nav-bar');
+const leftSection=document.querySelector('.left');
+
+
+
+mobileNav.addEventListener('click',()=>{
+    if (leftSection.style.display = 'none'){
+        leftSection.style.display='block'
+    }
+   
+  })
 
 const closeModal = (id) => {
   let el = document.getElementById(id);
