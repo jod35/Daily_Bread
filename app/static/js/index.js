@@ -84,7 +84,7 @@ recordAdditionForm.addEventListener("submit", (event) => {
 				<p>${data.verse.notes}</p>
 				<div class="options">
 							<a href="#" class="del-btn"><i class="fa fa-trash"  aria-hidden="true"></i></a>
-							<a href="#" class="update-btn"><i class="fas fa-feather "></i></a>
+              <a href="#" class="update-btn"><i class="fas fa-feather "></i></a>
 				</div>
 		`;
 
