@@ -2,7 +2,7 @@
 	padding: 0;
 	margin: 0;
 	box-sizing: border-box;
-	font-family: Arial,Helvetica,san-serif;
+	font-family:'Courier New', Courier, monospace;
 
 }
 
@@ -32,31 +32,30 @@ header{
 	position: relative;
 	top: 70px;
 	display: flex;
+	justify-content: space-between;
 }
 
 .left{
-	width: 30%;
-	background-color: rgb(8, 13, 17);
+	width: 25%;
+	color: black;
 	min-height: 100vh;
 }
 .form{
 	position: fixed;
 	margin-top: 20px;
-	color: white;
-	background: rgb(8,13,17);
+	
 }
-.form label{
-	padding-bottom: 10px;
-}
+
 fieldset{
 	border: none;
-	padding: 15px;
+	padding: 10px;
 }
-fieldset textarea, input{
+textarea, input{
 	width: 90%;
 	padding: 10px;
 	border-radius: 7px;
-	border: none;
+	border: 0.9px solid black;
+
 }
 
 .btn{
@@ -68,6 +67,7 @@ fieldset textarea, input{
 	color: white;
 	cursor: pointer;
 	transition: all 1.2s;
+	width: 90%;
 }
 
 .clear{
@@ -93,7 +93,7 @@ fieldset textarea, input{
 }
 
 .right{
-	background-color: rgb(8, 13, 17);
+	/* background-color: rgb(8, 13, 17); */
 	width: 70%;
 	
 }
@@ -106,7 +106,7 @@ fieldset textarea, input{
 }
 .verse{
 	width: 80%;
-	background-color: white;
+	background-color: lightgray;
 	padding: 20px;
 	margin: auto;
 	transition: all 1.2s;
@@ -224,6 +224,7 @@ fieldset textarea, input{
 		position: fixed;
 		margin-top: 20px;
 		color: white;
+		background: black;
 	}
 	fieldset textarea, input{
 		width: 100%;
